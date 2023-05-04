@@ -6,5 +6,11 @@ def homepage(request):
     Function response to website root HTTP requests
 
     Returns index.html template - db data returned
+
     """
-    return render(request, 'index.html')
+
+    name = "Razak"
+    age = 1
+    print(request)
+
+    return render(request, 'index.html', {'name': name, 'age': age})
