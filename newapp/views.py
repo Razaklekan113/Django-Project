@@ -1,10 +1,21 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Customer
 from .forms import CustomerForm
 
 def addnew(request):
-    return render(request, 'addnew.html')
+
+    if request.method == 'POST':
+
+        formset = CustomerForm(request.POST)
+
+        if formset.is_valid():
+            formset.save()
+            return HttpResponseRedirect("/")
+
+    else:
+        formset = CustomerForm()
+        return render(request, 'addnew.html', {'formset': formset})
 
 def homepage(request):
     """

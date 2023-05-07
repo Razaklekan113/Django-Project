@@ -1,11 +1,15 @@
 <html>
     <body>
 
+        {{ user }}
+
         {% for val in data %}
 
-            <p>{{ val.name }}</p>
-            <p>{{ val.age }}</p>
-            <p>{{ val.mobile }}</p>
+        <ul>    
+            <li>{{ val.name }}</li>
+            <li>{{ val.age }}</li>
+            <li>{{ val.mobile }}</li>
+        </ul>
 
         {% endfor %}
 
