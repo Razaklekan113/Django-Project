@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Customer
+from .forms import CustomerForm
+
+def addnew(request):
+    return render(request, 'addnew.html')
 
 def homepage(request):
     """
@@ -9,8 +14,7 @@ def homepage(request):
 
     """
 
-    name = "Razak"
-    age = 1
-    print(request)
+    x = Customer.objects.all()
 
-    return render(request, 'index.html', {'name': name, 'age': age})
+
+    return render(request, 'index.html', {'data': x})
