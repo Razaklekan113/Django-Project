@@ -1,7 +1,8 @@
 <html>
     <body>
-
-        {{ user }}
+        {% if user.username == "admin" %}
+            <h2>Hello {{user}}</h2>
+        {% endif %}
 
         {% for val in data %}
 
