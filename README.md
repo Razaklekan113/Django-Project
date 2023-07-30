@@ -1,4 +1,4 @@
-This is a django app, of rendering a tempalate form to the browser,
+# This is a django app, of rendering a tempalate form to the browser
 
 Whereby u can add and additional data to the data base using the form,
 
